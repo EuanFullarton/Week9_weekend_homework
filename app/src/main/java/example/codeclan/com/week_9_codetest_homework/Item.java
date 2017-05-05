@@ -22,5 +22,11 @@ public class Item {
             return this.value;
         }
 
+        public int bogof(){
+        int original_price = this.getValue();
+        int new_price = (original_price / 2);
+        return new_price;
+    }
+
 
 }

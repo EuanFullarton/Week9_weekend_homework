@@ -6,13 +6,9 @@ package example.codeclan.com.week_9_codetest_homework;
 
 public class Discount {
 
-//    private Item item;
-//
-//    public Discount(item){
-//        this.item = item;
-//    }
-//
-//    public int bogof(){
-//        if (item)
-//    }
+    private Item item;
+
+    public Discount(Item item){
+        this.item = item;
+    }
 }

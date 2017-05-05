@@ -15,16 +15,23 @@ public class ItemTest {
 
     @Before
     public void before() {
-        item = new Item("Chocolate", 1);
+        item = new Item("Coffee", 2);
     }
 
     @Test
     public void hasName(){
-        assertEquals("Chocolate", item.getName());
+        assertEquals("Coffee", item.getName());
     }
 
     @Test
     public void hasValue(){
-        assertEquals(1, item.getValue());
+        assertEquals(2, item.getValue());
     }
+
+    @Test
+    public void bogofTest(){
+        assertEquals(1, item.bogof());
+    }
+
+
 }

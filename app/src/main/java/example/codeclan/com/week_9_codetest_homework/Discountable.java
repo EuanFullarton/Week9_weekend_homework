@@ -5,4 +5,7 @@ package example.codeclan.com.week_9_codetest_homework;
  */
 
 public interface Discountable {
+
+
+
 }
