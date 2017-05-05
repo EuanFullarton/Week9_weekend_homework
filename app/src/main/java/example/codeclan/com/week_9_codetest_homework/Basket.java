@@ -70,4 +70,10 @@ public class Basket {
         return number_of_same_item;
     }
 
+    public void emptyBasket(){
+        items.clear();
+    }
+
+
+
 }

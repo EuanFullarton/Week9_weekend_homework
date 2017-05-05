@@ -76,5 +76,11 @@ public class BasketTest {
         assertEquals(2, basket.getNumberofSpecificItem(item2));
     }
 
+    @Test
+    public void canEmptyBasket(){
+        basket.emptyBasket();
+        assertEquals(0, basket.getItemCount());
+    }
+
 
 }
