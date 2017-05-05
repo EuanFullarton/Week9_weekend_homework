@@ -22,4 +22,9 @@ public class ItemTest {
     public void hasName(){
         assertEquals("Chocolate", item.getName());
     }
+
+    @Test
+    public void hasValue(){
+        assertEquals(1, item.getValue());
+    }
 }

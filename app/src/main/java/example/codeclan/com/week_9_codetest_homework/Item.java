@@ -18,5 +18,9 @@ public class Item {
             return this.name;
         }
 
+        public int getValue(){
+            return this.value;
+        }
+
 
 }
