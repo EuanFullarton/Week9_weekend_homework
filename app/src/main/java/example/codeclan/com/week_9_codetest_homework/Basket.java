@@ -22,7 +22,11 @@ public class Basket {
 
         for (int i = 0; i < items.size(); i++) {
             item_in_loop = items.get(i);
-            item_string = item_in_loop.getName().toString();
+            if (i == items.size() - 1) {
+                item_string += item_in_loop.getName().toString();
+            } else {
+                item_string += item_in_loop.getName().toString() + ", ";
+            }
         }
         return item_string;
     }

@@ -53,7 +53,8 @@ public class BasketTest {
     @Test
     public void canGetItems(){
         basket.addItem(item1);
-        assertEquals("Chocolate", basket.getItems());
+        basket.addItem(item2);
+        assertEquals("Chocolate, Coffee", basket.getItems());
     }
 
 }
