@@ -16,8 +16,15 @@ public class Basket {
         this.total_value = total_value;
     }
 
-    public ArrayList<Item> getItems(){
-        return this.items;
+    public String getItems() {
+        String item_string = "";
+        Item item_in_loop;
+
+        for (int i = 0; i < items.size(); i++) {
+            item_in_loop = items.get(i);
+            item_string = item_in_loop.getName().toString();
+        }
+        return item_string;
     }
 
     public int getItemCount(){

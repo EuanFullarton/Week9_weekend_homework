@@ -21,7 +21,7 @@ public class BasketTest {
     @Before
     public void before() {
         item1 = new Item("Chocolate", 1);
-        item1 = new Item("Coffee", 2);
+        item2 = new Item("Coffee", 2);
         items = new ArrayList<Item>(0);
         basket = new Basket(items, 3);
     }
@@ -48,6 +48,12 @@ public class BasketTest {
         basket.addItem(item2);
         basket.removeItem(item1);
         assertEquals(1, basket.getItemCount());
+    }
+
+    @Test
+    public void canGetItems(){
+        basket.addItem(item1);
+        assertEquals("Chocolate", basket.getItems());
     }
 
 }
