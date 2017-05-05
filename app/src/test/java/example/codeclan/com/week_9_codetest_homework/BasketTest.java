@@ -57,4 +57,11 @@ public class BasketTest {
         assertEquals("Chocolate, Coffee", basket.getItems());
     }
 
+    @Test
+    public void canGetTotalValue(){
+        basket.addItem(item1);
+        basket.addItem(item2);
+        assertEquals(3, basket.getTotalValue());
+    }
+
 }

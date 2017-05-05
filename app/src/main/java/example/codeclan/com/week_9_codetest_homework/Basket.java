@@ -35,9 +35,16 @@ public class Basket {
         return this.items.size();
     }
 
-//    public int calculateTotalValue(){
-////        return the value of each item in arrayList
-//    }
+    public int calculateTotalValue(){
+        int total_value = 0;
+        Item item_in_loop;
+
+        for (int i = 0; i < items.size(); i++) {
+            item_in_loop = items.get(i);
+            total_value += item_in_loop.getValue();
+        }
+        return total_value;
+    }
 
     public int getTotalValue(){
         return this.total_value;
