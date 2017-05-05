@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by user on 05/05/2017.
@@ -51,10 +52,10 @@ public class BasketTest {
     }
 
     @Test
-    public void canGetItems(){
+    public void canGetAllItems(){
         basket.addItem(item1);
         basket.addItem(item2);
-        assertEquals("Chocolate, Coffee", basket.getItems());
+        assertEquals("Chocolate, Coffee", basket.getAllItems());
     }
 
     @Test
@@ -62,6 +63,17 @@ public class BasketTest {
         basket.addItem(item1);
         basket.addItem(item2);
         assertEquals(3, basket.calculateTotalValue());
+    }
+
+    @Test
+    public void countNumberOfItem(){
+        basket.addItem(item1);
+        basket.addItem(item1);
+        basket.addItem(item1);
+        basket.addItem(item2);
+        basket.addItem(item2);
+        assertEquals(3, basket.getNumberofSpecificItem(item1));
+        assertEquals(2, basket.getNumberofSpecificItem(item2));
     }
 
 }
