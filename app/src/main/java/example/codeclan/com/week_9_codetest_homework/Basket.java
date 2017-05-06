@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class Basket {
 
     private ArrayList<Item> items;
-    private int total_value;
+    private double total_value;
 
-    public Basket(ArrayList<Item> items, int total_value){
+    public Basket(ArrayList<Item> items, int total_value) {
         this.items = items;
         this.total_value = total_value;
     }
 
-    public int getTotalValue(){
+    public double getTotalValue() {
         return this.total_value;
     }
 
@@ -35,43 +35,54 @@ public class Basket {
         return item_string;
     }
 
-    public int getItemCount(){
+    public int getItemCount() {
         return this.items.size();
     }
 
-    public int calculateTotalValue(){
-        int total_value = 0;
+    public int calculateTotalValue() {
+        int new_total_value = 0;
         Item item_in_loop;
 
         for (int i = 0; i < items.size(); i++) {
             item_in_loop = items.get(i);
-            total_value += item_in_loop.getValue();
+            new_total_value += item_in_loop.getValue();
         }
-        return total_value;
+        setTotalValue(new_total_value);
+        return new_total_value;
     }
 
-    public int getNumberofSpecificItem(Item item_checking_for) {
-        int number_of_same_item = 0;
-        Item item_in_loop;
-
-        for (int i = 0; i < items.size(); i++) {
-            item_in_loop = items.get(i);
-            if (item_in_loop.getName() == item_checking_for.getName())
-                number_of_same_item ++;
-        }
-        return number_of_same_item;
+    public int getNumberofSpecificItem(Item item) {
+        return item.getQuantity();
     }
 
-    public void addItem(Item item){
+    public void setTotalValue(double new_total_value) {
+        this.total_value = new_total_value;
+    }
+
+    public void addItem(Item item) {
         this.items.add(item);
     }
 
-    public void removeItem(Item item){
+    public void removeItem(Item item) {
         this.items.remove(item);
     }
 
-    public void emptyBasket(){
+    public void emptyBasket() {
         items.clear();
+    }
+
+    public void tenPercentOverTwentySpent() {
+        double new_total_value = 0;
+        double discount_amount;
+
+        if (calculateTotalValue() >= 20) {
+            discount_amount = total_value * 0.1;
+            new_total_value = total_value - discount_amount;
+            this.setTotalValue(new_total_value);
+        }
+        else {
+            this.setTotalValue(1);
+        }
     }
 
 

@@ -28,7 +28,7 @@ public class BasketTest {
 
     @Test
     public void hasTotalValue(){
-        assertEquals(0, basket.getTotalValue());
+        assertEquals(0.0, basket.getTotalValue());
     }
 
     @Test
@@ -65,20 +65,25 @@ public class BasketTest {
     }
 
     @Test
-    public void countNumberOfItem(){
+    public void canGetItemQuantity(){
+        item1.setQuantity(5);
         basket.addItem(item1);
-        basket.addItem(item1);
-        basket.addItem(item1);
-        basket.addItem(item2);
-        basket.addItem(item2);
-        assertEquals(3, basket.getNumberofSpecificItem(item1));
-        assertEquals(2, basket.getNumberofSpecificItem(item2));
+        assertEquals(5, basket.getNumberofSpecificItem(item1));
     }
 
     @Test
     public void canEmptyBasket(){
         basket.emptyBasket();
         assertEquals(0, basket.getItemCount());
+    }
+
+    @Test
+    public void testTenPercentDiscount(){
+        item1.setValue(25);
+        basket.addItem(item1);
+        assertEquals(25, basket.calculateTotalValue());
+        basket.tenPercentOverTwentySpent();
+        assertEquals(22.5, basket.getTotalValue());
     }
 
 }
