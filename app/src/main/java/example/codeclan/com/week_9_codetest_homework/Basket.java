@@ -16,6 +16,10 @@ public class Basket {
         this.total_value = total_value;
     }
 
+    public int getTotalValue(){
+        return this.total_value;
+    }
+
     public String getAllItems() {
         String item_string = "";
         Item item_in_loop;
@@ -58,14 +62,6 @@ public class Basket {
         return number_of_same_item;
     }
 
-//    public int applyDiscount() {
-//
-//        if (getNumberofSpecificItem(Item item_checking_for) % 2 == 0){
-//
-//        }
-//    }
-
-
     public void addItem(Item item){
         this.items.add(item);
     }
@@ -73,7 +69,6 @@ public class Basket {
     public void removeItem(Item item){
         this.items.remove(item);
     }
-
 
     public void emptyBasket(){
         items.clear();

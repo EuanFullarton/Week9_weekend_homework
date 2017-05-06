@@ -8,10 +8,12 @@ public class Item {
 
     private String name;
     private int value;
+    private int quantity;
 
-    public Item(String name, int value) {
+    public Item(String name, int value, int quantity) {
         this.name = name;
         this.value = value;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -22,15 +24,20 @@ public class Item {
         return this.value;
     }
 
-    public int bogof() {
-
-        // if (basket.getNumberOfSpecificItems % 2 == 0){
-        int original_price = this.getValue();
-        int new_price = (original_price / 2);
-        //} else {(new_price = (original_price/2) + original_price)}
-
-        return new_price;
+    public int getQuantity() {
+        return this.quantity;
     }
 
+    public void setName(String new_name){
+        this.name = new_name;
+    }
+
+    public void setValue(int new_value){
+        this.value = new_value;
+    }
+
+    public void setQuantity(int new_quantity){
+        this.quantity = new_quantity;
+    }
 
 }

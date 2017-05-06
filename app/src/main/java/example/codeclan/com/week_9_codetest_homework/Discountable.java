@@ -6,6 +6,6 @@ package example.codeclan.com.week_9_codetest_homework;
 
 public interface Discountable {
 
-
+    void calculateDiscount(Item item, Basket basket);
 
 }

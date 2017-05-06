@@ -15,7 +15,7 @@ public class ItemTest {
 
     @Before
     public void before() {
-        item = new Item("Coffee", 2);
+        item = new Item("Coffee", 2, 1);
     }
 
     @Test
@@ -29,8 +29,26 @@ public class ItemTest {
     }
 
     @Test
-    public void bogofTest(){
-        assertEquals(1, item.bogof());
+    public void hasQuantity(){
+        assertEquals(1, item.getQuantity());
+    }
+
+    @Test
+    public void canSetName(){
+        item.setName("Tea");
+        assertEquals("Tea", item.getName());
+    }
+
+    @Test
+    public void canSetValue(){
+        item.setValue(5);
+        assertEquals(5, item.getValue());
+    }
+
+    @Test
+    public void canSetQuantity(){
+        item.setQuantity(6);
+        assertEquals(6, item.getQuantity());
     }
 
 

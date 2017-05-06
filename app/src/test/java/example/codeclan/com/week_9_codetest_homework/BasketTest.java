@@ -20,15 +20,15 @@ public class BasketTest {
 
     @Before
     public void before() {
-        item1 = new Item("Chocolate", 1);
-        item2 = new Item("Coffee", 2);
+        item1 = new Item("Chocolate", 1, 1);
+        item2 = new Item("Coffee", 2, 1);
         items = new ArrayList<Item>(0);
         basket = new Basket(items, 0);
     }
 
     @Test
     public void hasTotalValue(){
-        assertEquals(0, basket.calculateTotalValue());
+        assertEquals(0, basket.getTotalValue());
     }
 
     @Test
@@ -80,6 +80,5 @@ public class BasketTest {
         basket.emptyBasket();
         assertEquals(0, basket.getItemCount());
     }
-
 
 }
