@@ -46,9 +46,25 @@ public class Basket {
         return total_value;
     }
 
-    public int getTotalValue(){
-        return this.total_value;
+    public int getNumberofSpecificItem(Item item_checking_for) {
+        int number_of_same_item = 0;
+        Item item_in_loop;
+
+        for (int i = 0; i < items.size(); i++) {
+            item_in_loop = items.get(i);
+            if (item_in_loop.getName() == item_checking_for.getName())
+                number_of_same_item ++;
+        }
+        return number_of_same_item;
     }
+
+//    public int applyDiscount() {
+//
+//        if (getNumberofSpecificItem(Item item_checking_for) % 2 == 0){
+//
+//        }
+//    }
+
 
     public void addItem(Item item){
         this.items.add(item);
@@ -58,22 +74,10 @@ public class Basket {
         this.items.remove(item);
     }
 
-    public int getNumberofSpecificItem(Item item_checking_for) {
-        int number_of_same_item = 0;
-        Item item_in_loop;
-
-        for (int i = 0; i < items.size(); i++) {
-            item_in_loop = items.get(i);
-            if (item_in_loop.getName() == item_checking_for.getName())
-            number_of_same_item ++;
-        }
-        return number_of_same_item;
-    }
 
     public void emptyBasket(){
         items.clear();
     }
-
 
 
 }

@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by user on 05/05/2017.
@@ -29,7 +28,7 @@ public class BasketTest {
 
     @Test
     public void hasTotalValue(){
-        assertEquals(0, basket.getTotalValue());
+        assertEquals(0, basket.calculateTotalValue());
     }
 
     @Test
