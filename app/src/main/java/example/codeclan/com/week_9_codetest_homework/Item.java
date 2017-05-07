@@ -7,10 +7,10 @@ package example.codeclan.com.week_9_codetest_homework;
 public class Item {
 
     private String name;
-    private int value;
+    private double value;
     private int quantity;
 
-    public Item(String name, int value, int quantity) {
+    public Item(String name, double value, int quantity) {
         this.name = name;
         this.value = value;
         this.quantity = quantity;
@@ -20,7 +20,7 @@ public class Item {
         return this.name;
     }
 
-    public int getValue() {
+    public double getValue() {
         return this.value;
     }
 
@@ -32,12 +32,24 @@ public class Item {
         this.name = new_name;
     }
 
-    public void setValue(int new_value){
+    public void setValue(double new_value){
         this.value = new_value;
     }
 
     public void setQuantity(int new_quantity){
         this.quantity = new_quantity;
+    }
+
+    public void bogof(){
+        double new_value = 0;
+
+        if (this.quantity % 2 == 0){
+            new_value = value / 2;
+        }
+        else if (this.quantity > 2){
+            new_value = value + (value / 2);
+        }
+        setValue(new_value);
     }
 
 }

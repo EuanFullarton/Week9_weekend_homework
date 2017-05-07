@@ -25,7 +25,7 @@ public class ItemTest {
 
     @Test
     public void hasValue(){
-        assertEquals(2, item.getValue());
+        assertEquals(2.0, item.getValue());
     }
 
     @Test
@@ -42,13 +42,25 @@ public class ItemTest {
     @Test
     public void canSetValue(){
         item.setValue(5);
-        assertEquals(5, item.getValue());
+        assertEquals(5.0, item.getValue());
     }
 
     @Test
     public void canSetQuantity(){
-        item.setQuantity(6);
-        assertEquals(6, item.getQuantity());
+        item.setQuantity(2);
+        assertEquals(2, item.getQuantity());
+    }
+
+    @Test
+    public void testBogof(){
+        item.setQuantity(2);
+        item.bogof();
+        assertEquals(1.0, item.getValue());
+        //test whether discount applies if number is odd:
+        item.setValue(2);
+        item.setQuantity(3);
+        item.bogof();
+        assertEquals(3.0, item.getValue());
     }
 
 
