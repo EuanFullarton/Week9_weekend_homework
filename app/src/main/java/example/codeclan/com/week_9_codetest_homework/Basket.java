@@ -39,14 +39,15 @@ public class Basket {
         return this.items.size();
     }
 
-    public int calculateTotalValue() {
-        int new_total_value = 0;
+    public double calculateTotalValue() {
+        double new_total_value = 0;
         Item item_in_loop;
 
         for (int i = 0; i < items.size(); i++) {
             item_in_loop = items.get(i);
             new_total_value += (item_in_loop.getValue()) * (item_in_loop.getQuantity());
         }
+        new_total_value = Math.round(new_total_value * 100.0)/ 100.0;
         setTotalValue(new_total_value);
         return new_total_value;
     }
@@ -78,6 +79,7 @@ public class Basket {
         if (calculateTotalValue() >= 20) {
             discount_amount = total_value * 0.1;
             new_total_value = total_value - discount_amount;
+            new_total_value = Math.round(new_total_value * 100.0)/ 100.0;
             this.setTotalValue(new_total_value);
         }
     }

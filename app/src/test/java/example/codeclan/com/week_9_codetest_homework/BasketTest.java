@@ -61,7 +61,7 @@ public class BasketTest {
     public void canGetTotalValue(){
         basket.addItem(item1);
         basket.addItem(item2);
-        assertEquals(3, basket.calculateTotalValue());
+        assertEquals(3.0, basket.calculateTotalValue());
     }
 
     @Test
@@ -81,13 +81,13 @@ public class BasketTest {
     public void testTenPercentDiscount(){
         item1.setValue(25);
         basket.addItem(item1);
-        assertEquals(25, basket.calculateTotalValue());
+        assertEquals(25.0, basket.calculateTotalValue());
         basket.tenPercentOverTwentySpent();
         assertEquals(22.5, basket.getTotalValue());
         //test if discount doesn't apply if total value is under 20:
         basket.emptyBasket();
         basket.addItem(item2);
-        assertEquals(2, basket.calculateTotalValue());
+        assertEquals(2.0, basket.calculateTotalValue());
         basket.tenPercentOverTwentySpent();
         assertEquals(2.0, basket.getTotalValue());
     }
@@ -96,7 +96,7 @@ public class BasketTest {
     public void testLoyaltyDiscount(){
         basket.addItem(item1);
         basket.addItem(item2);
-        assertEquals(3, basket.calculateTotalValue());
+        assertEquals(3.0, basket.calculateTotalValue());
         basket.loyaltyDiscount();
         assertEquals(2.94, basket.getTotalValue());
     }
