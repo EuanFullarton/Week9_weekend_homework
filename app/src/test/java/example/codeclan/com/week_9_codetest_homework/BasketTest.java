@@ -101,4 +101,31 @@ public class BasketTest {
         assertEquals(2.94, basket.getTotalValue());
     }
 
+    @Test
+    public void tripleDiscountTest(){
+
+        //buy one get one free discount
+        item1.setValue(10);
+        item1.setQuantity(2);
+        item1.bogof();
+        basket.addItem(item1);
+        basket.calculateTotalValue();
+        assertEquals(10.0, basket.getTotalValue());
+
+        //adding items for total to go above 20
+        item2.setValue(6);
+        item2.setQuantity(2);
+        basket.addItem(item2);
+        basket.calculateTotalValue();
+        assertEquals(22.0, basket.getTotalValue());
+
+        //applying 10% discount
+        basket.tenPercentOverTwentySpent();
+        assertEquals(19.8, basket.getTotalValue());
+
+        //applying loyalty discount
+        basket.loyaltyDiscount();
+        assertEquals(19.40, basket.getTotalValue());
+    }
+
 }
