@@ -51,17 +51,17 @@ public class ItemTest {
         assertEquals(2, item.getQuantity());
     }
 
-    @Test
-    public void testBogof(){
-        item.setQuantity(2);
-        item.bogof();
-        assertEquals(1.0, item.getValue());
-        //test whether discount applies if number is odd:
-        item.setValue(2);
-        item.setQuantity(3);
-        item.bogof();
-        assertEquals(3.0, item.getValue());
-    }
+//    @Test
+//    public void testBogof(){
+//        item.setQuantity(2);
+//        item.bogof();
+//        assertEquals(1.0, item.getValue());
+//        //test whether discount applies if number is odd:
+//        item.setValue(2);
+//        item.setQuantity(3);
+//        item.bogof();
+//        assertEquals(3.0, item.getValue());
+//    }
 
 
 }

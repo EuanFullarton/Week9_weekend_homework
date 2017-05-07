@@ -64,4 +64,16 @@ public class CheckoutTest {
         assertEquals(2.94, checkout.getTotalBasketValue());
     }
 
+    @Test
+    public void testBogof(){
+        item1.setQuantity(2);
+//        checkout.bogof(item1);
+        assertEquals(2.0, checkout.getTotalItemValue(item1));
+        //test whether discount applies if number is odd:
+//        item1.setValue(2);
+//        item1.setQuantity(3);
+//        checkout.bogof(item1);
+//        assertEquals(3.0, checkout.getItemValue(item1));
+    }
+
 }

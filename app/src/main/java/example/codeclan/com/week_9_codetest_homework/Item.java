@@ -40,15 +40,15 @@ public class Item {
         this.quantity = new_quantity;
     }
 
-    public void bogof() {
-        double new_value = 0;
-
-        if (this.quantity % 2 == 0) {
-            new_value = value / 2;
-        } else if (this.quantity > 2) {
-            new_value = value + (value / 2);
-        }
-        setValue(new_value);
-    }
+//    public void bogof() {
+//        double new_value = 0;
+//
+//        if (this.quantity % 2 == 0) {
+//            new_value = value / 2;
+//        } else if (this.quantity > 2) {
+//            new_value = value + (value / 2);
+//        }
+//        setValue(new_value);
+//    }
 
 }

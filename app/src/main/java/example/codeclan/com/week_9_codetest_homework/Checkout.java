@@ -20,6 +20,10 @@ public class Checkout {
         return basket.getTotalValue();
     }
 
+    public double getTotalItemValue(Item item){
+        return item.getValue() * item.getQuantity();
+    }
+
     public double calculateTotalBasketValue(Basket basket) {
         double new_total_value = 0;
         Item item_in_loop;
@@ -34,10 +38,15 @@ public class Checkout {
         return new_total_value;
     }
 
-    public double getTotalValueOfSpecificItems(Item item){
+    public double getTotalValueOfSpecificItems(Item item) {
         double total_item_value = (item.getValue() * item.getQuantity());
         return total_item_value;
     }
+
+    public void setItemValue(double new_value) {
+        item.setValue(new_value);
+    }
+
 
     public void setTotalBasketValue(double new_total_value) {
         basket.setTotalValue(new_total_value);
@@ -64,6 +73,17 @@ public class Checkout {
         new_total_value = basket.getTotalValue() - discount_amount;
         new_total_value = Math.round(new_total_value * 100.0) / 100.0;
         this.setTotalBasketValue(new_total_value);
+    }
+
+    public void bogof(Item item) {
+        double new_value = 0;
+
+        if (item.getQuantity() % 2 == 0) {
+            new_value = item.getValue() / 2;
+        } else if (item.getQuantity() > 2) {
+            new_value = item.getValue() + (item.getValue() / 2);
+        }
+        this.setItemValue(new_value);
     }
 
 }
