@@ -80,9 +80,6 @@ public class Basket {
             new_total_value = total_value - discount_amount;
             this.setTotalValue(new_total_value);
         }
-        else {
-            this.setTotalValue(1);
-        }
     }
 
 

@@ -84,6 +84,12 @@ public class BasketTest {
         assertEquals(25, basket.calculateTotalValue());
         basket.tenPercentOverTwentySpent();
         assertEquals(22.5, basket.getTotalValue());
+        //test if discount doesn't apply if total value is under 20:
+        basket.emptyBasket();
+        basket.addItem(item2);
+        assertEquals(2, basket.calculateTotalValue());
+        basket.tenPercentOverTwentySpent();
+        assertEquals(2.0, basket.getTotalValue());
     }
 
 }
