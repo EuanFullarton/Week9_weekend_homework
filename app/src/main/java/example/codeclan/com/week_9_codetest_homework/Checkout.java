@@ -9,8 +9,6 @@ import java.util.ArrayList;
 public class Checkout {
     private ArrayList<Item> items;
     private Basket basket;
-    private Item item;
-
 
     public Checkout(Basket basket) {
         this.basket = basket;
@@ -20,11 +18,11 @@ public class Checkout {
         return basket.getTotalValue();
     }
 
-    public double getNewItemValue(Item item){
+    public double getNewItemValue(Item item) {
         return item.getValue();
     }
 
-    public double getTotalItemValue(Item item){
+    public double getTotalItemValue(Item item) {
         return item.getValue() * item.getQuantity();
     }
 
@@ -83,17 +81,11 @@ public class Checkout {
         double new_value = 0;
 
         if (item.getQuantity() % 2 == 0) {
-            new_value = (item.getQuantity() / 2) * (item.getValue());
-        }
-
-        else if (item.getQuantity() > 2) {
+            new_value = (item.getValue() / 2);
+        } else if (item.getQuantity() > 2) {
             new_value = (((item.getQuantity() / 2) * item.getValue())
                     + (item.getValue()));
 
-//        } else if (item.getQuantity() > 2) {
-//            new_value = (item.getValue() + (item.getValue() / 2));
-
-//            (Quantity/2 x Price)+((Quantity/2)x(Price/2)))
         }
         new_value = Math.round(new_value * 100.0) / 100.0;
         this.setItemValue(item, new_value);
