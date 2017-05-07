@@ -20,7 +20,7 @@ public class Basket {
         return this.total_value;
     }
 
-    public String getAllItems() {
+    public String getAllItemsAsStrings() {
         String item_string = "";
         Item item_in_loop;
 
@@ -35,22 +35,26 @@ public class Basket {
         return item_string;
     }
 
+    public ArrayList<Item> getBasketItems() {
+        return this.items;
+    }
+
     public int getItemCount() {
         return this.items.size();
     }
 
-    public double calculateTotalValue() {
-        double new_total_value = 0;
-        Item item_in_loop;
-
-        for (int i = 0; i < items.size(); i++) {
-            item_in_loop = items.get(i);
-            new_total_value += (item_in_loop.getValue()) * (item_in_loop.getQuantity());
-        }
-        new_total_value = Math.round(new_total_value * 100.0)/ 100.0;
-        setTotalValue(new_total_value);
-        return new_total_value;
-    }
+//    public double calculateTotalValue() {
+//        double new_total_value = 0;
+//        Item item_in_loop;
+//
+//        for (int i = 0; i < items.size(); i++) {
+//            item_in_loop = items.get(i);
+//            new_total_value += (item_in_loop.getValue()) * (item_in_loop.getQuantity());
+//        }
+//        new_total_value = Math.round(new_total_value * 100.0) / 100.0;
+//        setTotalValue(new_total_value);
+//        return new_total_value;
+//    }
 
     public int getNumberofSpecificItem(Item item) {
         return item.getQuantity();
@@ -72,26 +76,25 @@ public class Basket {
         items.clear();
     }
 
-    public void tenPercentOverTwentySpent() {
-        double new_total_value = 0;
-        double discount_amount;
+//    public void tenPercentOverTwentySpent() {
+//        double new_total_value = 0;
+//        double discount_amount;
+//
+//        if (calculateTotalValue() >= 20) {
+//            discount_amount = total_value * 0.1;
+//            new_total_value = total_value - discount_amount;
+//            new_total_value = Math.round(new_total_value * 100.0) / 100.0;
+//            this.setTotalValue(new_total_value);
+//        }
+//    }
 
-        if (calculateTotalValue() >= 20) {
-            discount_amount = total_value * 0.1;
-            new_total_value = total_value - discount_amount;
-            new_total_value = Math.round(new_total_value * 100.0)/ 100.0;
-            this.setTotalValue(new_total_value);
-        }
-    }
-
-    public void loyaltyDiscount(){
+    public void loyaltyDiscount() {
         double new_total_value = 0;
         double discount_amount;
         discount_amount = total_value * 0.02;
         new_total_value = total_value - discount_amount;
-        new_total_value = Math.round(new_total_value * 100.0)/ 100.0;
+        new_total_value = Math.round(new_total_value * 100.0) / 100.0;
         this.setTotalValue(new_total_value);
     }
-
 
 }
