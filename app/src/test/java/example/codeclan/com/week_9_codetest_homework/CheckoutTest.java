@@ -41,6 +41,12 @@ public class CheckoutTest {
     }
 
     @Test
+    public void canSetItemValue(){
+        checkout.setItemValue(item1, 3);
+        assertEquals(3.0, checkout.getTotalItemValue(item1));
+    }
+
+    @Test
     public void testTenPercentDiscount() {
         item1.setValue(25);
         basket.addItem(item1);
@@ -67,13 +73,13 @@ public class CheckoutTest {
     @Test
     public void testBogof(){
         item1.setQuantity(2);
-//        checkout.bogof(item1);
-        assertEquals(2.0, checkout.getTotalItemValue(item1));
+        checkout.bogof(item1);
+        assertEquals(1.0, checkout.getNewItemValue(item1));
         //test whether discount applies if number is odd:
 //        item1.setValue(2);
 //        item1.setQuantity(3);
 //        checkout.bogof(item1);
-//        assertEquals(3.0, checkout.getItemValue(item1));
+//        assertEquals(4.0, checkout.getTotalItemValue(item1));
     }
 
 }
