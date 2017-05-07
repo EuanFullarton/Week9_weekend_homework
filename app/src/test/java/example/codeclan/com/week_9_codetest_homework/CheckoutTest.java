@@ -76,10 +76,10 @@ public class CheckoutTest {
         checkout.bogof(item1);
         assertEquals(1.0, checkout.getNewItemValue(item1));
         //test whether discount applies if number is odd:
-//        item1.setValue(2);
-//        item1.setQuantity(3);
-//        checkout.bogof(item1);
-//        assertEquals(4.0, checkout.getTotalItemValue(item1));
+        item1.setValue(2);
+        item1.setQuantity(3);
+        checkout.bogof(item1);
+        assertEquals(4.0, checkout.getNewItemValue(item1));
     }
 
 }
