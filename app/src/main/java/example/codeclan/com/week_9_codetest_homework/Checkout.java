@@ -56,4 +56,14 @@ public class Checkout {
         }
     }
 
+    public void loyaltyDiscount(Basket basket) {
+        double new_total_value = 0;
+        double discount_amount;
+
+        discount_amount = basket.getTotalValue() * 0.02;
+        new_total_value = basket.getTotalValue() - discount_amount;
+        new_total_value = Math.round(new_total_value * 100.0) / 100.0;
+        this.setTotalBasketValue(new_total_value);
+    }
+
 }

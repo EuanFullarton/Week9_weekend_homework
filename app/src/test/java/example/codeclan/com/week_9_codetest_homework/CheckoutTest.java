@@ -29,19 +29,19 @@ public class CheckoutTest {
     }
 
     @Test
-    public void canGetTotalBasketValue(){
+    public void canGetTotalBasketValue() {
         basket.addItem(item1);
         basket.addItem(item2);
         assertEquals(3.0, checkout.calculateTotalBasketValue(basket));
     }
 
     @Test
-    public void canGetTotalValueofSpecificItems(){
+    public void canGetTotalValueofSpecificItems() {
         assertEquals(1.0, checkout.getTotalValueOfSpecificItems(item1));
     }
 
     @Test
-    public void testTenPercentDiscount(){
+    public void testTenPercentDiscount() {
         item1.setValue(25);
         basket.addItem(item1);
         assertEquals(25.0, checkout.calculateTotalBasketValue(basket));
@@ -53,6 +53,15 @@ public class CheckoutTest {
         assertEquals(2.0, checkout.calculateTotalBasketValue(basket));
         checkout.tenPercentOverTwentySpent(basket);
         assertEquals(2.0, checkout.getTotalBasketValue());
+    }
+
+    @Test
+    public void testLoyaltyDiscount() {
+        basket.addItem(item1);
+        basket.addItem(item2);
+        assertEquals(3.0, checkout.calculateTotalBasketValue(basket));
+        checkout.loyaltyDiscount(basket);
+        assertEquals(2.94, checkout.getTotalBasketValue());
     }
 
 }

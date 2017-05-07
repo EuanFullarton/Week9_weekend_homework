@@ -87,14 +87,14 @@ public class Basket {
 //            this.setTotalValue(new_total_value);
 //        }
 //    }
-
-    public void loyaltyDiscount() {
-        double new_total_value = 0;
-        double discount_amount;
-        discount_amount = total_value * 0.02;
-        new_total_value = total_value - discount_amount;
-        new_total_value = Math.round(new_total_value * 100.0) / 100.0;
-        this.setTotalValue(new_total_value);
-    }
+//
+//    public void loyaltyDiscount() {
+//        double new_total_value = 0;
+//        double discount_amount;
+//        discount_amount = total_value * 0.02;
+//        new_total_value = total_value - discount_amount;
+//        new_total_value = Math.round(new_total_value * 100.0) / 100.0;
+//        this.setTotalValue(new_total_value);
+//    }
 
 }
