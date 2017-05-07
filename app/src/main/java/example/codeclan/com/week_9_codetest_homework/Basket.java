@@ -82,5 +82,14 @@ public class Basket {
         }
     }
 
+    public void loyaltyDiscount(){
+        double new_total_value = 0;
+        double discount_amount;
+
+        discount_amount = total_value * 0.02;
+        new_total_value = total_value - discount_amount;
+        this.setTotalValue(new_total_value);
+    }
+
 
 }

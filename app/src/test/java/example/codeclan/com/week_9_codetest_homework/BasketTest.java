@@ -92,4 +92,13 @@ public class BasketTest {
         assertEquals(2.0, basket.getTotalValue());
     }
 
+    @Test
+    public void testLoyaltyDiscount(){
+        basket.addItem(item1);
+        basket.addItem(item2);
+        assertEquals(3, basket.calculateTotalValue());
+        basket.loyaltyDiscount();
+        assertEquals(2.94, basket.getTotalValue());
+    }
+
 }
