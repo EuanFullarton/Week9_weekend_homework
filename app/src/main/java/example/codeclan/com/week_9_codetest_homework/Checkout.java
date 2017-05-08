@@ -40,11 +40,6 @@ public class Checkout {
         return new_total_value;
     }
 
-    public double getTotalValueOfSpecificItems(Item item) {
-        double total_item_value = (item.getValue() * item.getQuantity());
-        return total_item_value;
-    }
-
     public void setItemValue(Item item, double new_value) {
         item.setValue(new_value);
     }

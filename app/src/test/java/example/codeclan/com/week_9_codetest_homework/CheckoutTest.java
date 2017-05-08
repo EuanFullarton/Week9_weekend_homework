@@ -36,8 +36,8 @@ public class CheckoutTest {
     }
 
     @Test
-    public void canGetTotalValueofSpecificItems() {
-        assertEquals(1.0, checkout.getTotalValueOfSpecificItems(item1));
+    public void canGetTotalValueofSpecificItem() {
+        assertEquals(1.0, checkout.getTotalItemValue(item1));
     }
 
     @Test
